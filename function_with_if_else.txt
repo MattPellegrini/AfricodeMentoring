@@ -15,8 +15,8 @@ In [13]: is_capital_at("SgiehfGEYshjdfiFSGH", 8)
 Uppercase character
 
 
-With the above, the program exits with an error if we use a position that is larger than the text is long.
-Below we add some check and return from the function early if this is the case.
+# With the above, the program exits with an error if we use a position that is larger than the text is long.
+# Below we add some check and return from the function early if this is the case.
 
 In [15]: def is_capital_at(text: str, position: int) -> None:
     ...:     # Returns True if the character at position is a capital letter.
@@ -34,3 +34,46 @@ In [15]: def is_capital_at(text: str, position: int) -> None:
 
 In [16]: is_capital_at("SgiehfGEYshjdfiFSGH", 100)
 You asked for a position that is not in the text.
+
+
+
+# But what happens if a character at a position is neither upper or lowercase, such as '.'?
+In [18]: is_capital_at(".", 0)
+Lowercase character
+
+# This is not really correct, we can check by running the built-in functions below.
+
+In [19]: ".".isupper()
+Out[19]: False
+
+In [20]: ".".islower()
+Out[20]: False
+
+# We can see from the above, that the built-in functions suggest that punctuation is neither upper nor lower.
+# Let's fix our function to return something to reflect this.
+
+In [21]: def is_capital_at(text: str, position: int) -> None:
+    ...:     # Returns True if the character at position is a capital letter.
+    ...:     # Returns False otherwise.
+    ...:     length_of_text = len(text)
+    ...:     if position < 0 or position >= length_of_text:
+    ...:         print("You asked for a position that is not in the text.")
+    ...:         return
+    ...:     character = text[position]
+    ...:     if character.isupper():
+    ...:         print("Uppercase character")
+    ...:     elif character.islower():
+    ...:         print("Lowercase character")
+    ...:     else:
+    ...:         print("Neither uppercase nor lowercase character. Punctuation?")
+    ...:
+    ...:
+
+In [22]: is_capital_at("google.com", 6)
+Neither uppercase nor lowercase character. Punctuation?
+
+In [24]: is_capital_at("google.com", 5)
+Lowercase character
+
+
+# From the above we can see that we now print something more accurate for punctuation also.
