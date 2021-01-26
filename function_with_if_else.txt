@@ -13,3 +13,24 @@ Lowercase character
 
 In [13]: is_capital_at("SgiehfGEYshjdfiFSGH", 8)
 Uppercase character
+
+
+With the above, the program exits with an error if we use a position that is larger than the text is long.
+Below we add some check and return from the function early if this is the case.
+
+In [15]: def is_capital_at(text: str, position: int) -> None:
+    ...:     # Returns True if the character at position is a capital letter.
+    ...:     # Returns False otherwise.
+    ...:     length_of_text = len(text)
+    ...:     if position < 0 or position >= length_of_text:
+    ...:         print("You asked for a position that is not in the text.")
+    ...:         return
+    ...:     character = text[position]
+    ...:     if character.isupper():
+    ...:         print("Uppercase character")
+    ...:     else:
+    ...:         print("Lowercase character")
+    ...:
+
+In [16]: is_capital_at("SgiehfGEYshjdfiFSGH", 100)
+You asked for a position that is not in the text.
