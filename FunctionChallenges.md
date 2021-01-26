@@ -1,4 +1,4 @@
-#Function Challenges
+# Function Challenges
 Try to write small python functions to the problems below.
 
 ## Challenge 1
