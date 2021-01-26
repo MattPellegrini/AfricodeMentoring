@@ -1,0 +1,20 @@
+In [6]: l = [1,2,3,4,5]
+
+In [7]: if len(l) == 5:
+   ...:     print("length was 5")
+   ...: elif len(l) == 4:
+   ...:     print("length was 4")
+   ...: else:
+   ...:     print("length was not 4 nor 5")
+   ...:
+length was 5
+
+In [8]: if len(l) == 5:
+   ...:     print("length was 5")
+   ...: else:
+   ...:     if len(l) == 4:
+   ...:         print("length was 4")
+   ...:     else:
+   ...:         print("length was not 4 nor 5")
+   ...:
+length was 5
