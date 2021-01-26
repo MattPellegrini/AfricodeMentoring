@@ -1,0 +1,15 @@
+In [11]: def is_capital_at(text: str, position: int) -> None:
+    ...:     # Returns True if the character at position is a capital letter.
+    ...:     # Returns False otherwise.
+    ...:     character = text[position]
+    ...:     if character.isupper():
+    ...:         print("Uppercase character")
+    ...:     else:
+    ...:         print("Lowercase character")
+    ...:
+
+In [12]: is_capital_at("SgiehfGEYshjdfiFSGH", 5)
+Lowercase character
+
+In [13]: is_capital_at("SgiehfGEYshjdfiFSGH", 8)
+Uppercase character
